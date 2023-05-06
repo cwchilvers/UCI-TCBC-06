@@ -1,9 +1,13 @@
 :root {
     --white: rgb(242, 242, 242);
+    --aside: rgb(21, 36, 71);
+    --main: rgb(16, 21, 48);
 }
 
 body {
     font-family: 'poppins';
+    height: 100%; width: 100%;
+    overflow: hidden;
 }
 
 header {
@@ -17,4 +21,20 @@ h1 {
     color: var(--white);
     margin-right: 10%;
     font-size: 40px;
+}
+
+#container {
+    color: var(--white);
+    display: flex;
+    height: 100%; width: 100%;
+}
+
+aside {
+    height: 100%; width: 20%;
+    background-color: var(--aside);
+}
+
+main {
+    height: 100%; width: 100%;
+    background-color: var(--main);
 }
