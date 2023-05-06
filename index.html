@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet"> 
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+  <header>
+    <h1>Weather Dashboard</h1>
+  </header>
+
+  <aside>
+    <form id="search">
+        <label>Search for a City:</label>
+        <input type="text" value="San Diego">
+        <input type="submit">
+    </form>
+    <hr>
+    <ul id="cities">
+        <li><a>Atlanta</a></li>
+        <li><a>Denver</a></li>
+        <li><a>Seattle</a></li>
+        <li><a>San Francisco</a></li>
+        <li><a>Orlando</a></li>
+        <li><a>New York</a></li>
+        <li><a>Chicago</a></li>
+        <li><a>Austin</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <div id="current-weather">
+    </div>
+    <div id="5-day-forecast">
+    </div>
+  </main>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
