@@ -1,17 +1,23 @@
 :root {
     --white: rgb(242, 242, 242);
-    --aside: rgb(21, 36, 71);
-    --main: rgb(16, 21, 48);
+    --midBlue: rgb(26, 41, 74);
+    --darkBlue: rgb(16, 21, 48);
+    --lightBlue: rgb(34,151,159);
+    --bluePurple: rgb(33,33,142);
+    --purple: rgb(64,60,136);
+    --gradient1: linear-gradient(300deg, var(--purple) 0%, var(--bluePurple) 35%, var(--lightBlue) 100%);
 }
 
 body {
     font-family: 'poppins';
     height: 100%; width: 100%;
     overflow: hidden;
+    user-select: none;
 }
 
+/* Header content */
 header {
-    background: linear-gradient(300deg, rgba(64,60,136,1) 0%, rgba(33,33,142,1) 35%, rgba(34,151,159,1) 100%);
+    background: var(--gradient1);
     display: flex; align-items: center;
     height: 90px; width: 100%;
     justify-content: right;
@@ -23,18 +29,83 @@ h1 {
     font-size: 40px;
 }
 
+/* Container for aside and main */
 #container {
     color: var(--white);
     display: flex;
     height: 100%; width: 100%;
 }
 
+/* Aside content */
 aside {
-    height: 100%; width: 20%;
-    background-color: var(--aside);
+    height: 100%; width: 500px;
+    background-color: var(--midBlue);
+    padding: 20px;
 }
 
+label {
+    font-size: 30px; font-weight: bold;
+}
+
+#input-border {
+    background: var(--gradient1);
+    border-radius: 13px;
+    height: 40px; width: 100%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 20px 0 20px 0
+}
+
+#input-box {
+    background: var(--darkBlue);
+    border: none; border-radius: 10px;
+    color: var(--white);
+    height: 34px; width: 100%;
+    margin: 0 3px 0 3px;
+    padding: 0 10px 0 10px;
+}
+
+#submit-button {
+    background-color: var(--lightBlue);
+    border: none; border-radius: 4px;
+    color: var(--darkBlue);
+    cursor: pointer;
+    font-size: 20px; font-weight: bold;
+    height: 50px; width: 100%;
+    transition: 0.3s;
+}
+
+#submit-button:hover {
+    color: var(--white);
+}
+
+*:focus {
+    outline: none;
+}
+
+.break {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px;
+    background: var(--gradient1); border-radius: 4px;
+}
+
+#cities li {
+    padding-top: 20px;
+}
+
+#cities a {
+    cursor: pointer;
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+#cities a:hover {
+    padding-left: 15px;
+}
+
+/* Main content */
 main {
     height: 100%; width: 100%;
-    background-color: var(--main);
+    background-color: var(--darkBlue);
 }
