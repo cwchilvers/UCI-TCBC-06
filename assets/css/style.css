@@ -111,9 +111,10 @@ main {
     background-color: var(--darkBlue);
 }
 
+/* Current weather */
 #current-weather-container {
     display: flex; align-items: center; justify-content: center;
-    height: 30%;
+    height: 45%;
 }
 
 #current-weather-border {
@@ -154,20 +155,36 @@ h2 {
     flex-basis: 100%;
 }
 
-#weather-symbol {
+#current-weather #weather-symbol {
     position: absolute;
     padding-left: 400px;
     font-size: 150px;
 }
 
-
-
-
-
-
-
-
+/* Five day forecast */
 #five-day-forecast {
-    background-color: yellow;
-    height: 30%;
+    height: 45%;
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;
+}
+
+.day-container {
+    background-color: var(--midBlue);
+    border-radius: 4px;
+    height: 200px; width: 200px;
+}
+
+h3 {
+    font-size: 20px;
+    padding: 10px 10px 0px 10px
+}
+
+#five-day-forecast #weather-symbol {
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+}
+
+#five-day-forecast p {
+    font-size: 20px;
+    padding: 0px 10px 0 10px
 }
