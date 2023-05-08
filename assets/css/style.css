@@ -139,7 +139,7 @@ main {
     display: flex; align-items: center; 
 }
 
-h2 {
+#current-weather-container h2 {
     font-size: 40px;
     padding-left: 30px;
 }
@@ -159,6 +159,11 @@ h2 {
     position: absolute;
     padding-left: 400px;
     font-size: 150px;
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
 }
 
 /* Five day forecast */
