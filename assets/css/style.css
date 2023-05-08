@@ -6,6 +6,8 @@
     --bluePurple: rgb(33,33,142);
     --purple: rgb(64,60,136);
     --gradient1: linear-gradient(300deg, var(--purple) 0%, var(--bluePurple) 35%, var(--lightBlue) 100%);
+    --gradient2: linear-gradient(300deg, var(--lightBlue) 0%, var(--bluePurple) 35%, var(--purple) 100%);
+    --gradient3: linear-gradient(300deg, var(--bluePurple) 35%, var(--midBlue) 100%);
 }
 
 body {
@@ -84,9 +86,9 @@ label {
 
 .break {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 2px;
-    background: var(--gradient1); border-radius: 4px;
+    background: var(--gradient2); border-radius: 4px;
 }
 
 #cities li {
@@ -96,16 +98,76 @@ label {
 #cities a {
     cursor: pointer;
     font-size: 20px;
-
     transition: 0.3s;
 }
 
 #cities a:hover {
-    padding-left: 15px;
+    padding-left: 10px;
 }
 
 /* Main content */
 main {
     height: 100%; width: 100%;
     background-color: var(--darkBlue);
+}
+
+#current-weather-container {
+    display: flex; align-items: center; justify-content: center;
+    height: 30%;
+}
+
+#current-weather-border {
+    background: var(--gradient2);
+    border-radius: 4px;
+    height: 350px; width: 800px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 20px 0 20px 0
+}
+
+#current-weather-background {
+    background: var(--gradient3);
+    border-radius: 4px;
+    height: 344px; width: 800px;
+    display: flex; align-items: center; justify-content: left; flex-wrap: wrap;
+    margin: 0 3px 0 3px;
+}
+
+#city-date {
+    background-color: var(--lightBlue);
+    height: 70px; width: 100%;
+    display: flex; align-items: center; 
+}
+
+h2 {
+    font-size: 40px;
+    padding-left: 30px;
+}
+
+#current-weather {
+    height: 274px; width: 100%;
+    padding: 30px 30px 30px 100px;
+    display: flex; align-items: center; flex-wrap: wrap;
+}
+
+#current-weather p {
+    font-size: 30px;
+    flex-basis: 100%;
+}
+
+#weather-symbol {
+    position: absolute;
+    padding-left: 400px;
+    font-size: 150px;
+}
+
+
+
+
+
+
+
+
+#five-day-forecast {
+    background-color: yellow;
+    height: 30%;
 }
