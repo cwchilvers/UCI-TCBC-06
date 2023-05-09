@@ -135,8 +135,10 @@ main {
 
 #city-date {
     background-color: var(--lightBlue);
-    height: 70px; width: 100%;
     display: flex; align-items: center; 
+    font-size: 40px; font-weight: bold;
+    height: 70px; width: 100%;
+    padding-left: 40px;
 }
 
 #current-weather-container h2 {
@@ -155,10 +157,10 @@ main {
     flex-basis: 100%;
 }
 
-#current-weather #weather-symbol {
+#current-weather .weather-symbol {
+    width: 300px; height: 300px;
     position: absolute;
-    padding-left: 400px;
-    font-size: 150px;
+    margin-left: 300px;
 }
 
 h2 {
@@ -168,14 +170,14 @@ h2 {
 
 /* Five day forecast */
 #five-day-forecast {
-    height: 45%;
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;
+    height: 55%;
+    display: flex; justify-content: center; flex-wrap: wrap; column-gap: 20px; 
 }
 
 .day-container {
     background-color: var(--midBlue);
     border-radius: 4px;
-    height: 200px; width: 200px;
+    height: 195px; width: 200px;
 }
 
 h3 {
@@ -183,9 +185,9 @@ h3 {
     padding: 10px 10px 0px 10px
 }
 
-#five-day-forecast #weather-symbol {
-    text-align: center;
+#five-day-forecast .weather-symbol {
     font-size: 40px;
+    text-align: center;
     padding: 10px;
 }
 
@@ -193,3 +195,4 @@ h3 {
     font-size: 20px;
     padding: 0px 10px 0 10px
 }
+
