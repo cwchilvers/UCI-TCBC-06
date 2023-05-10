@@ -1,24 +1,28 @@
 $(window).on('load', function() {
     // Get elements
-    // Current weather elements
+        // Current weather elements
     const currentEl = document.getElementById('current-weather');
     const currentCityDateEl = document.getElementById('city-date');
     const currentIconEl = currentEl.children[3];
     const currentTempEl = currentEl.children[0];
     const currentWindEl = currentEl.children[1];
     const currentHumidityEl = currentEl.children[2];
-    // Five day forecast elements
+        // Five day forecast elements
     const fiveDayForecastEl = document.getElementById('five-day-forecast');
-    // Day 1
+        // Day 1
     const day1El = fiveDayForecastEl.children[0];
-    const day1Date = day1El.children[0];
-    // Day 2
-    // Day 3
-    // Day 4
-    // Day 5
+    const day1DateEl = day1El.children[0];
+    const day1IconEl = day1El.children[1];
+    const day1TempEl = day1El.children[2];
+    const day1WindEl = day1El.children[4];
+    const day1HumidityEl = day1El.children[6];
+        // Day 2
+        // Day 3
+        // Day 4
+        // Day 5
 
     // Weather data
-    // Current weather data
+        // Current weather data
     var currentDate;
     var currentWeather;
     var currentIcon;
@@ -26,11 +30,17 @@ $(window).on('load', function() {
     var currentWind;
     var currentHumidity;
     // Five day forecast data
-    // Day 1
-    // Day 2
-    // Day 3
-    // Day 4
-    // Day 5
+        // Day 1
+    var day1Date;
+    var day1Weather;
+    var day1Icon;
+    var day1Temperature;
+    var day1Wind;
+    var day1Humidity;
+        // Day 2
+        // Day 3
+        // Day 4
+        // Day 5
 
 
     // API call parameters
@@ -62,9 +72,8 @@ $(window).on('load', function() {
     
 
 
-
+    // Get coordinates of city
     function GetCoordinates() {
-
         geocodingURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=' + limit + '&appid=' + APIkey;
     
         fetch(geocodingURL)
@@ -75,16 +84,15 @@ $(window).on('load', function() {
             lat = data[0].lat;
             lon = data[0].lon;
 
-            GetForecast();
+            GetCurrentWeather();
         });    
     }
     
+    // Enter coordinates to find current weather for city
+    function GetCurrentWeather() {
+        weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid='+ APIkey + '&units=imperial';
     
-    function GetForecast() {
-    
-        forecastURL = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid='+ APIkey + '&units=imperial';
-    
-        fetch(forecastURL)
+        fetch(weatherURL)
         .then(function (response) {
             return response.json();
         })
@@ -94,20 +102,50 @@ $(window).on('load', function() {
             currentTemperature = Math.round(data.main.temp);
             currentWind = Math.round(data.wind.speed);
             currentHumidity = data.main.humidity;
+
+            GetForecast();
+        });
+    }
+
+    // Enter coordinates to get 5 day forecast for city
+    function GetForecast() {
+        forecastURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid='+ APIkey + '&units=imperial';
     
+        fetch(forecastURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            // Day 1
+            day1Weather = data.list[4].weather[0].main;
+            day1Icon = 'https://openweathermap.org/img/wn/' + data.list[4].weather[0].icon + '@4x.png';
+            day1Temperature = Math.round(data.list[4].main.temp);
+            day1Wind = Math.round(data.list[4].wind.speed);
+            day1Humidity = data.list[4].main.humidity;
 
-            console.log(data);
 
 
+
+
+
+            
             UpdatePage();
         });
     }
     
     function UpdatePage() {
+        // Update current weather
         currentCityDateEl.textContent = city;
         currentTempEl.textContent = "Temp: " + currentTemperature + "°F";
         currentWindEl.textContent = "Wind: " + currentWind + " mph";
         currentHumidityEl.textContent = "Humidity: " + currentHumidity + "%";
         currentIconEl.setAttribute("src", currentIcon);
+        // Update forecast day 1
+        day1DateEl.textContent = "day 1";
+        day1IconEl.setAttribute("src", day1Icon);
+        day1TempEl.textContent = "Temp: " + day1Temperature + "°F";
+        day1WindEl.textContent = "Wind: " + day1Wind + " mph";
+        day1HumidityEl.textContent = "Humidity: " + day1Humidity + "%";
     }
 })
+
