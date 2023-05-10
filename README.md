@@ -6,4 +6,4 @@ The following web app is a weather dashboard where a user can search a city and 
 ![Screenshot 2023-05-10 000439](https://github.com/cwchilvers/UCI-CBC-06-WeatherDashboard/assets/59628271/f342e69f-b7ae-4f5d-90f1-36f7e3497931)
 
 ## Deployed Web App
-[Work Day Scheduler](https://cwchilvers.github.io/UCI-CBC-06-WeatherDashboard/)
+[Weather Dashboard](https://cwchilvers.github.io/UCI-CBC-06-WeatherDashboard/)
