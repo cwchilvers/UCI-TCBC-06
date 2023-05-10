@@ -112,7 +112,7 @@ $(window).on('load', function() {
     
 
 
-    
+
 
 
     // Get coordinates of city
@@ -160,30 +160,34 @@ $(window).on('load', function() {
         })
         .then(function (data) {
             // Day 1
+            day1Date = data.list[4].dt_txt;
             day1Weather = data.list[4].weather[0].main;
             day1Icon = 'https://openweathermap.org/img/wn/' + data.list[4].weather[0].icon + '@4x.png';
             day1Temperature = Math.round(data.list[4].main.temp);
             day1Wind = Math.round(data.list[4].wind.speed);
             day1Humidity = data.list[4].main.humidity;
             // Day 2
-            day2Weather = data.list[12].weather[0].main;
+            day2Date = data.list[12].dt_txt;
             day2Icon = 'https://openweathermap.org/img/wn/' + data.list[12].weather[0].icon + '@4x.png';
             day2Temperature = Math.round(data.list[12].main.temp);
             day2Wind = Math.round(data.list[12].wind.speed);
             day2Humidity = data.list[12].main.humidity;           
             // Day 3
+            day3Date = data.list[20].dt_txt;
             day3Weather = data.list[20].weather[0].main;
             day3Icon = 'https://openweathermap.org/img/wn/' + data.list[20].weather[0].icon + '@4x.png';
             day3Temperature = Math.round(data.list[20].main.temp);
             day3Wind = Math.round(data.list[20].wind.speed);
             day3Humidity = data.list[20].main.humidity;        
             // Day 4
+            day4Date = data.list[28].dt_txt;
             day4Weather = data.list[28].weather[0].main;
             day4Icon = 'https://openweathermap.org/img/wn/' + data.list[28].weather[0].icon + '@4x.png';
             day4Temperature = Math.round(data.list[28].main.temp);
             day4Wind = Math.round(data.list[28].wind.speed);
             day4Humidity = data.list[28].main.humidity;        
             // Day 5
+            day5Date = data.list[36].dt_txt;
             day5Weather = data.list[36].weather[0].main;
             day5Icon = 'https://openweathermap.org/img/wn/' + data.list[36].weather[0].icon + '@4x.png';
             day5Temperature = Math.round(data.list[36].main.temp);
@@ -202,31 +206,31 @@ $(window).on('load', function() {
         currentHumidityEl.textContent = "Humidity: " + currentHumidity + "%";
         currentIconEl.setAttribute("src", currentIcon);
         // Update forecast day 1
-        day1DateEl.textContent = "day 1";
+        day1DateEl.textContent = day1Date.split(" ")[0];
         day1IconEl.setAttribute("src", day1Icon);
         day1TempEl.textContent = "Temp: " + day1Temperature + "°F";
         day1WindEl.textContent = "Wind: " + day1Wind + " mph";
         day1HumidityEl.textContent = "Humidity: " + day1Humidity + "%";
         // Update forecast day 2
-        day2DateEl.textContent = "day 2";
+        day2DateEl.textContent = day2Date.split(" ")[0];
         day2IconEl.setAttribute("src", day2Icon);
         day2TempEl.textContent = "Temp: " + day2Temperature + "°F";
         day2WindEl.textContent = "Wind: " + day2Wind + " mph";
         day2HumidityEl.textContent = "Humidity: " + day2Humidity + "%";
         // Update forecast day 3
-        day3DateEl.textContent = "day 3";
+        day3DateEl.textContent = day3Date.split(" ")[0];
         day3IconEl.setAttribute("src", day3Icon);
         day3TempEl.textContent = "Temp: " + day3Temperature + "°F";
         day3WindEl.textContent = "Wind: " + day3Wind + " mph";
         day3HumidityEl.textContent = "Humidity: " + day3Humidity + "%";
         // Update forecast day 4
-        day4DateEl.textContent = "day 4";
+        day4DateEl.textContent = day4Date.split(" ")[0];
         day4IconEl.setAttribute("src", day4Icon);
         day4TempEl.textContent = "Temp: " + day4Temperature + "°F";
         day4WindEl.textContent = "Wind: " + day4Wind + " mph";
         day4HumidityEl.textContent = "Humidity: " + day4Humidity + "%";
         // Update forecast day 5
-        day5DateEl.textContent = "day 5";
+        day5DateEl.textContent = day5Date.split(" ")[0];
         day5IconEl.setAttribute("src", day5Icon);
         day5TempEl.textContent = "Temp: " + day5Temperature + "°F";
         day5WindEl.textContent = "Wind: " + day5Wind + " mph";
