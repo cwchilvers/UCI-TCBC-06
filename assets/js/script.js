@@ -3,7 +3,15 @@ $(window).on('load', function() {
         // Search elements
     const inputBox = document.getElementById("input-box"); 
     const submitButton = document.getElementById("submit-button");
-
+    const exampleCities = document.getElementById("cities");
+    const atlanta = exampleCities.children[0];
+    const denver = exampleCities.children[1];
+    const seattle = exampleCities.children[2];
+    const sanFrancisco = exampleCities.children[3];
+    const orlando = exampleCities.children[4];
+    const newYork = exampleCities.children[5];
+    const chicago = exampleCities.children[6];
+    const austin = exampleCities.children[7];
         // Current weather elements
     const currentEl = document.getElementById('current-weather');
     const currentCityDateEl = document.getElementById('city-date');
@@ -99,22 +107,66 @@ $(window).on('load', function() {
     var geocodingURL;
     var forecastURL;
 
-
-
-Kwigillingokal
     // Default city
     city = "Kwigillingok";
     GetCoordinates();
     
+    // Search city
     submitButton.addEventListener("click", function(event) {
         event.preventDefault()
         city = inputBox.value;
         GetCoordinates();
-        console.log(city);
       });
 
-
-
+    // Selecting example cities
+      // Atlanta
+    atlanta.addEventListener("click", function(event) {
+        event.preventDefault()
+        city = atlanta.textContent;
+        GetCoordinates();
+    });
+        // Denver
+    denver.addEventListener("click", function(event) {
+        event.preventDefault()
+        city = denver.textContent;
+        GetCoordinates();
+    });
+        // Seattle
+    seattle.addEventListener("click", function(event) {
+        event.preventDefault()
+        city = seattle.textContent;
+        GetCoordinates();
+    });
+        // San Francisco
+    sanFrancisco.addEventListener("click", function(event) {
+        event.preventDefault()
+        city = sanFrancisco.textContent;
+        GetCoordinates();
+    });
+        // Orlando
+    orlando.addEventListener("click", function(event) {
+        event.preventDefault()
+        city = orlando.textContent;
+        GetCoordinates();
+    });
+        // New York
+    newYork.addEventListener("click", function(event) {
+        event.preventDefault()
+        city = newYork.textContent;
+        GetCoordinates();
+    });
+        // Chicago
+    chicago.addEventListener("click", function(event) {
+        event.preventDefault()
+        city = chicago.textContent;
+        GetCoordinates();
+    });
+        // Austin
+    austin.addEventListener("click", function(event) {
+        event.preventDefault()
+        city = austin.textContent;
+        GetCoordinates();
+    });
 
     // Get coordinates of city
     function GetCoordinates() {
@@ -128,6 +180,7 @@ Kwigillingokal
             lat = data[0].lat;
             lon = data[0].lon;
             city = data[0].name;
+            
             GetCurrentWeather();
         });    
     }
