@@ -48,7 +48,6 @@ $(window).on('load', function() {
     // Weather data
         // Current weather data
     var currentDate;
-    var currentWeather;
     var currentIcon;
     var currentTemperature;
     var currentWind;
@@ -56,35 +55,30 @@ $(window).on('load', function() {
     // Five day forecast data
         // Day 1
     var day1Date;
-    var day1Weather;
     var day1Icon;
     var day1Temperature;
     var day1Wind;
     var day1Humidity;
         // Day 2
     var day2Date;
-    var day2Weather;
     var day2Icon;
     var day2Temperature;
     var day2Wind;
     var day2Humidity;
         // Day 3
     var day3Date;
-    var day3Weather;
     var day3Icon;
     var day3Temperature;
     var day3Wind;
     var day3Humidity;
         // Day 4
     var day4Date;
-    var day4Weather;
     var day4Icon;
     var day4Temperature;
     var day4Wind;
     var day4Humidity;
         // Day 5
     var day5Date;
-    var day5Weather;
     var day5Icon;
     var day5Temperature;
     var day5Wind;
@@ -100,7 +94,6 @@ $(window).on('load', function() {
     const APIkey = "41a901896f60f480de1298be37bde3f8";
     var geocodingURL;
     var forecastURL;
-    var icon = 'https://openweathermap.org/img/wn/' + currentIcon + '@4x.png';
 
 
 
@@ -140,7 +133,7 @@ $(window).on('load', function() {
             return response.json();
         })
         .then(function (data) {
-            currentWeather = data.weather[0].main;
+            currentDate = new Date(data.dt * 1000).toLocaleDateString("en-US");
             currentIcon = 'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@4x.png';
             currentTemperature = Math.round(data.main.temp);
             currentWind = Math.round(data.wind.speed);
@@ -160,34 +153,34 @@ $(window).on('load', function() {
         })
         .then(function (data) {
             // Day 1
-            day1Date = data.list[4].dt_txt;
+            day1Date = new Date(data.list[4].dt * 1000).toLocaleDateString("en-US");
             day1Weather = data.list[4].weather[0].main;
             day1Icon = 'https://openweathermap.org/img/wn/' + data.list[4].weather[0].icon + '@4x.png';
             day1Temperature = Math.round(data.list[4].main.temp);
             day1Wind = Math.round(data.list[4].wind.speed);
             day1Humidity = data.list[4].main.humidity;
             // Day 2
-            day2Date = data.list[12].dt_txt;
+            day2Date = new Date(data.list[12].dt * 1000).toLocaleDateString("en-US");
             day2Icon = 'https://openweathermap.org/img/wn/' + data.list[12].weather[0].icon + '@4x.png';
             day2Temperature = Math.round(data.list[12].main.temp);
             day2Wind = Math.round(data.list[12].wind.speed);
             day2Humidity = data.list[12].main.humidity;           
             // Day 3
-            day3Date = data.list[20].dt_txt;
+            day3Date = new Date(data.list[20].dt * 1000).toLocaleDateString("en-US");
             day3Weather = data.list[20].weather[0].main;
             day3Icon = 'https://openweathermap.org/img/wn/' + data.list[20].weather[0].icon + '@4x.png';
             day3Temperature = Math.round(data.list[20].main.temp);
             day3Wind = Math.round(data.list[20].wind.speed);
             day3Humidity = data.list[20].main.humidity;        
             // Day 4
-            day4Date = data.list[28].dt_txt;
+            day4Date = new Date(data.list[28].dt * 1000).toLocaleDateString("en-US");
             day4Weather = data.list[28].weather[0].main;
             day4Icon = 'https://openweathermap.org/img/wn/' + data.list[28].weather[0].icon + '@4x.png';
             day4Temperature = Math.round(data.list[28].main.temp);
             day4Wind = Math.round(data.list[28].wind.speed);
             day4Humidity = data.list[28].main.humidity;        
             // Day 5
-            day5Date = data.list[36].dt_txt;
+            day5Date = new Date(data.list[36].dt * 1000).toLocaleDateString("en-US");
             day5Weather = data.list[36].weather[0].main;
             day5Icon = 'https://openweathermap.org/img/wn/' + data.list[36].weather[0].icon + '@4x.png';
             day5Temperature = Math.round(data.list[36].main.temp);
@@ -198,9 +191,10 @@ $(window).on('load', function() {
         });
     }
     
+    // Update page with retrieved data
     function UpdatePage() {
         // Update current weather
-        currentCityDateEl.textContent = city;
+        currentCityDateEl.textContent = city + ": " + currentDate;
         currentTempEl.textContent = "Temp: " + currentTemperature + "°F";
         currentWindEl.textContent = "Wind: " + currentWind + " mph";
         currentHumidityEl.textContent = "Humidity: " + currentHumidity + "%";
