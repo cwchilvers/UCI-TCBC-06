@@ -1,9 +1,9 @@
-# Challenge 5: Work Day Scheduler
+# Challenge 6: Weather Dashboard
 ## Description
-The following web app is a work day scheduler. Each hour has a row with an input field and a save button to save the user's input and load it when the page is re-opened. Rows are colored grey, red, and green. Hours that have passed are grey. The current hour is red. Future hours are colored green.
+The following web app is a weather dashboard where a user can search a city and view the current weather and five-day forecast. Each day has an icon for the weather and details about the temperature, wind speed, and humidity. The last searched city will load when the user refreshes or re-opens the page. The default city that loads is Kwigillingok, Alaska.
 
 ## Screenshots
-![Screenshot 2023-05-02 143929](https://user-images.githubusercontent.com/59628271/235568070-bbf085a5-3c52-4271-b1bd-55aa04b1ce2c.png)
+![Screenshot 2023-05-10 000439](https://github.com/cwchilvers/UCI-CBC-06-WeatherDashboard/assets/59628271/f342e69f-b7ae-4f5d-90f1-36f7e3497931)
 
 ## Deployed Web App
 [Work Day Scheduler](https://cwchilvers.github.io/UCI-CBC-06-WeatherDashboard/)
