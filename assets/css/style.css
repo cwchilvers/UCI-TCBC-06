@@ -157,7 +157,7 @@ main {
     flex-basis: 100%;
 }
 
-#current-weather .weather-symbol {
+#current-weather .icon {
     width: 300px; height: 300px;
     position: absolute;
     margin-left: 300px;
@@ -185,7 +185,7 @@ h3 {
     padding: 10px 10px 0px 10px
 }
 
-#five-day-forecast .weather-symbol {
+#five-day-forecast .icon {
     height: 60px; width: 60px;
     text-align: center;
     margin-left: 20px;
@@ -193,6 +193,5 @@ h3 {
 
 #five-day-forecast p {
     font-size: 20px;
-    padding: 0px 10px 0 10px
+    padding: 0px 10px 16px 10px
 }
-
