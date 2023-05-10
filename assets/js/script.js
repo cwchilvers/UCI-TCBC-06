@@ -107,8 +107,15 @@ $(window).on('load', function() {
     var geocodingURL;
     var forecastURL;
 
-    // Default city
-    city = "Kwigillingok";
+    // Load last city (if it exists)
+    if (localStorage.getItem("lastCity") === null) {
+        // Default city
+        city = "Kwigillingok";
+    } else {
+        // Last city
+        city = localStorage.getItem("lastCity")
+    }
+
     GetCoordinates();
     
     // Search city
@@ -187,6 +194,9 @@ $(window).on('load', function() {
     
     // Enter coordinates to find current weather for city
     function GetCurrentWeather() {
+        // Store latest city search in local storage
+        localStorage.setItem("lastCity", JSON.stringify(city));
+
         weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid='+ APIkey + '&units=imperial';
     
         fetch(weatherURL)
