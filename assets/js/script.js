@@ -1,5 +1,9 @@
 $(window).on('load', function() {
     // Get elements
+        // Search elements
+    const inputBox = document.getElementById("input-box"); 
+    const submitButton = document.getElementById("submit-button");
+
         // Current weather elements
     const currentEl = document.getElementById('current-weather');
     const currentCityDateEl = document.getElementById('city-date');
@@ -97,13 +101,17 @@ $(window).on('load', function() {
 
 
 
-
-
-    city = "Aliso Viejo";
-
+Kwigillingokal
+    // Default city
+    city = "Kwigillingok";
     GetCoordinates();
     
-
+    submitButton.addEventListener("click", function(event) {
+        event.preventDefault()
+        city = inputBox.value;
+        GetCoordinates();
+        console.log(city);
+      });
 
 
 
@@ -119,7 +127,7 @@ $(window).on('load', function() {
         .then(function (data) {
             lat = data[0].lat;
             lon = data[0].lon;
-
+            city = data[0].name;
             GetCurrentWeather();
         });    
     }
