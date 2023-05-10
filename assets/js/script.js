@@ -17,6 +17,12 @@ $(window).on('load', function() {
     const day1WindEl = day1El.children[4];
     const day1HumidityEl = day1El.children[6];
         // Day 2
+    const day2El = fiveDayForecastEl.children[1];
+    const day2DateEl = day2El.children[0];
+    const day2IconEl = day2El.children[1];
+    const day2TempEl = day2El.children[2];
+    const day2WindEl = day2El.children[4];
+    const day2HumidityEl = day2El.children[6];
         // Day 3
         // Day 4
         // Day 5
@@ -38,6 +44,12 @@ $(window).on('load', function() {
     var day1Wind;
     var day1Humidity;
         // Day 2
+    var day2Date;
+    var day2Weather;
+    var day2Icon;
+    var day2Temperature;
+    var day2Wind;
+    var day2Humidity;
         // Day 3
         // Day 4
         // Day 5
@@ -122,13 +134,17 @@ $(window).on('load', function() {
             day1Temperature = Math.round(data.list[4].main.temp);
             day1Wind = Math.round(data.list[4].wind.speed);
             day1Humidity = data.list[4].main.humidity;
+            // Day 2
+            day2Weather = data.list[12].weather[0].main;
+            day2Icon = 'https://openweathermap.org/img/wn/' + data.list[12].weather[0].icon + '@4x.png';
+            day2Temperature = Math.round(data.list[12].main.temp);
+            day2Wind = Math.round(data.list[12].wind.speed);
+            day2Humidity = data.list[12].main.humidity;           
 
 
 
 
 
-
-            
             UpdatePage();
         });
     }
@@ -146,6 +162,12 @@ $(window).on('load', function() {
         day1TempEl.textContent = "Temp: " + day1Temperature + "°F";
         day1WindEl.textContent = "Wind: " + day1Wind + " mph";
         day1HumidityEl.textContent = "Humidity: " + day1Humidity + "%";
+        // Update forecast day 2
+        day2DateEl.textContent = "day 2";
+        day2IconEl.setAttribute("src", day2Icon);
+        day2TempEl.textContent = "Temp: " + day2Temperature + "°F";
+        day2WindEl.textContent = "Wind: " + day2Wind + " mph";
+        day2HumidityEl.textContent = "Humidity: " + day2Humidity + "%";
     }
 })
 
