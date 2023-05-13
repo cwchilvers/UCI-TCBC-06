@@ -1,24 +1,16 @@
 $(window).on('load', function() {
     // Get elements
+    const element = {
         // Search elements
-    const inputBox = document.getElementById("input-box"); 
-    const submitButton = document.getElementById("submit-button");
-        // Example cities elements
-    const exampleCities = document.getElementById("cities");
-    const atlanta = exampleCities.children[0];
-    const denver = exampleCities.children[1];
-    const seattle = exampleCities.children[2];
-    const sanFrancisco = exampleCities.children[3];
-    const orlando = exampleCities.children[4];
-    const newYork = exampleCities.children[5];
-    const chicago = exampleCities.children[6];
-    const austin = exampleCities.children[7];
-
+        inputBox: document.getElementById("input-box"),
+        submitButton: document.getElementById("submit-button"),
+        // Seach History
+        searchHistory: document.getElementById("search-history"),
         // Current weather elements
-    const currentCityDateEl = document.getElementById('city-date');
-    const currentEl = document.getElementById('current-weather');
-        // Five day forecast element
-    const fiveDayForecastEl = document.getElementById('five-day-forecast');
+        cityDate: document.getElementById('city-date'),
+        currentWeather: document.getElementById('current-weather'),
+        fiveDayForecast: document.getElementById('five-day-forecast'),
+    }
 
     // Forecast
     var forecast = [
@@ -66,6 +58,8 @@ $(window).on('load', function() {
         }
     ]
 
+    var searchHistory = [];
+
     // API call parameters
     const limit = 1;
     var city;
@@ -78,72 +72,24 @@ $(window).on('load', function() {
     var forecastURL;
 
     // Load last city (if it exists)
-    if (localStorage.getItem("lastCity") === null) {
+    if (localStorage.getItem("searchHistory") === null) {
         // Default city
         city = "Kwigillingok";
     } else {
-        // Last city
-        city = localStorage.getItem("lastCity")
+        // Load last city and search history
+        searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+        city = searchHistory[0];
+        console.log(searchHistory);
     }
 
     GetCoordinates();
- 
+  
     // Search city
-    submitButton.addEventListener("click", function(event) {
+    element.submitButton.addEventListener("click", function(event) {
         event.preventDefault()
-        city = inputBox.value;
+        city = element.inputBox.value;
         GetCoordinates();
       });
-
-    // Selecting example cities
-      // Atlanta
-    atlanta.addEventListener("click", function(event) {
-        event.preventDefault()
-        city = atlanta.textContent;
-        GetCoordinates();
-    });
-        // Denver
-    denver.addEventListener("click", function(event) {
-        event.preventDefault()
-        city = denver.textContent;
-        GetCoordinates();
-    });
-        // Seattle
-    seattle.addEventListener("click", function(event) {
-        event.preventDefault()
-        city = seattle.textContent;
-        GetCoordinates();
-    });
-        // San Francisco
-    sanFrancisco.addEventListener("click", function(event) {
-        event.preventDefault()
-        city = sanFrancisco.textContent;
-        GetCoordinates();
-    });
-        // Orlando
-    orlando.addEventListener("click", function(event) {
-        event.preventDefault()
-        city = orlando.textContent;
-        GetCoordinates();
-    });
-        // New York
-    newYork.addEventListener("click", function(event) {
-        event.preventDefault()
-        city = newYork.textContent;
-        GetCoordinates();
-    });
-        // Chicago
-    chicago.addEventListener("click", function(event) {
-        event.preventDefault()
-        city = chicago.textContent;
-        GetCoordinates();
-    });
-        // Austin
-    austin.addEventListener("click", function(event) {
-        event.preventDefault()
-        city = austin.textContent;
-        GetCoordinates();
-    });
 
     // Get coordinates of city
     function GetCoordinates() {
@@ -158,7 +104,19 @@ $(window).on('load', function() {
             lon = data[0].lon;
             city = data[0].name;
             
-            GetCurrentWeather();
+            // Search History
+            if (city === "Kwigillingok" && searchHistory.length === 0) {
+                GetCurrentWeather();
+            } else {
+                if (city !== searchHistory[0]){
+                    searchHistory.unshift(city);
+                }
+                if (searchHistory.length > 10) {
+                    searchHistory.length = 10;
+                }
+                GetCurrentWeather();
+            }
+
         });    
     }
     
@@ -204,25 +162,30 @@ $(window).on('load', function() {
 
     // Update page with retrieved data
     function UpdatePage() {
-        // Store latest city search in local storage
-        localStorage.setItem("lastCity", JSON.stringify(city));
+        // Store search history in local storage
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 
         // Update current weather
-        currentCityDateEl.textContent = city + ": " + forecast[0].date;
-        currentEl.children[0].setAttribute("src", forecast[0].icon);
-        currentEl.children[1].textContent = forecast[0].temp;
-        currentEl.children[2].textContent = forecast[0].wind;
-        currentEl.children[3].textContent = forecast[0].humidity;
+        element.cityDate.textContent = city + ": " + forecast[0].date;
+        element.currentWeather.children[0].setAttribute("src", forecast[0].icon);
+        element.currentWeather.children[1].textContent = forecast[0].temp;
+        element.currentWeather.children[2].textContent = forecast[0].wind;
+        element.currentWeather.children[3].textContent = forecast[0].humidity;
 
         // Update five day forecast
         let j = 0;
         for (i = 1; i < forecast.length; i++) {
-            fiveDayForecastEl.children[i-1].children[0].textContent = forecast[i].date;
-            fiveDayForecastEl.children[i-1].children[1].setAttribute("src", forecast[i].icon);
-            fiveDayForecastEl.children[i-1].children[2].textContent = forecast[i].temp;
-            fiveDayForecastEl.children[i-1].children[3].textContent = forecast[i].wind;
-            fiveDayForecastEl.children[i-1].children[4].textContent = forecast[i].humidity;
+            element.fiveDayForecast.children[i-1].children[0].textContent = forecast[i].date;
+            element.fiveDayForecast.children[i-1].children[1].setAttribute("src", forecast[i].icon);
+            element.fiveDayForecast.children[i-1].children[2].textContent = forecast[i].temp;
+            element.fiveDayForecast.children[i-1].children[3].textContent = forecast[i].wind;
+            element.fiveDayForecast.children[i-1].children[4].textContent = forecast[i].humidity;
         }        
+
+        // Update search history
+        for (i = 0; i < searchHistory.length; i++) {
+            element.searchHistory.children[i].children[0].textContent = searchHistory[i];
+        }
     }
 })
 

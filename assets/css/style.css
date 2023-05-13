@@ -91,17 +91,17 @@ label {
     background: var(--gradient2); border-radius: 4px;
 }
 
-#cities li {
+#search-history li {
     padding-top: 20px;
 }
 
-#cities a {
+#search-history a {
     cursor: pointer;
     font-size: 20px;
     transition: 0.3s;
 }
 
-#cities a:hover {
+#search-history a:hover {
     padding-left: 10px;
 }
 
