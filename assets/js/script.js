@@ -79,8 +79,67 @@ $(window).on('load', function() {
         // Load last city and search history
         searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
         city = searchHistory[0];
-        console.log(searchHistory);
     }
+
+    element.searchHistory.children[0].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[0].children[0].textContent;
+        GetCoordinates();
+        });
+
+    element.searchHistory.children[1].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[1].children[0].textContent;
+        GetCoordinates();
+        });
+
+    element.searchHistory.children[2].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[2].children[0].textContent;
+        GetCoordinates();
+        });
+
+    element.searchHistory.children[3].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[3].children[0].textContent;
+        GetCoordinates();
+        });
+
+    element.searchHistory.children[4].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[4].children[0].textContent;
+        GetCoordinates();
+        });
+
+    element.searchHistory.children[5].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[5].children[0].textContent;
+        GetCoordinates();
+        });
+
+    element.searchHistory.children[6].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[6].children[0].textContent;
+        GetCoordinates();
+        });
+
+    element.searchHistory.children[7].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[7].children[0].textContent;
+        GetCoordinates();
+        });
+
+    element.searchHistory.children[8].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[8].children[0].textContent;
+        GetCoordinates();
+        });
+
+    element.searchHistory.children[9].children[0].addEventListener("click", function(event) {
+        event.preventDefault()
+        city = element.searchHistory.children[9].children[0].textContent;
+        GetCoordinates();
+        });
 
     GetCoordinates();
   
