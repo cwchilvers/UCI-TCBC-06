@@ -116,7 +116,6 @@ $(window).on('load', function() {
                 }
                 GetCurrentWeather();
             }
-
         });    
     }
     
