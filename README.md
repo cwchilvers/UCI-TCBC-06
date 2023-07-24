@@ -20,7 +20,6 @@
 5. [Technologies Used](#technologies-used)
 6. [License](#license)
 7. [Credits](#credits)
-8. [Deployed Web App](#deployed-web-app)
 9. [Contact Information](#contact-information)
 
 ## Description
