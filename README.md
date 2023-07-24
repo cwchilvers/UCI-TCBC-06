@@ -1,9 +1,57 @@
-# Challenge 6: Weather Dashboard
+<h1 align="center">
+  Weather Dashboard
+</h1>
+
+<h4 align="center">A simple 5-day forecast weather dashboard.</h4>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" alt="HTML5">
+    <img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white" alt="HTML5">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" alt="HTML5">
+    <img src="https://img.shields.io/badge/jQuery-0769AD.svg?style=for-the-badge&logo=jQuery&logoColor=white" alt="HTML5">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge">
+</p>
+
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Screenshots](#screenshots)
+5. [Technologies Used](#technologies-used)
+6. [License](#license)
+7. [Credits](#credits)
+8. [Deployed Web App](#deployed-web-app)
+9. [Contact Information](#contact-information)
+
 ## Description
-The following web app is a weather dashboard where a user can search a city and view the current weather and five-day forecast. Each day has an icon for the weather and details about the temperature, wind speed, and humidity. The last searched city will load when the user refreshes or re-opens the page. The default city that loads is Kwigillingok, Alaska. Last 10 searches are stored on the side.
+The following is a weather dashboard which allows the user to search for a city and view the current weather and 5-day forecast. The user can also view their search history and click on a city to view the weather for that city again. The weather dashboard uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The app runs in the browser and features dynamically updated HTML and CSS powered by jQuery. The app also uses `localStorage` to store any persistent data.
+
+## Installation
+To install this project, clone the repository locally and open the `index.html` file in your browser.
+
+## Usage
+To use this project, either access the web app [here](https://cwchilvers.github.io/UCI-CBC-06-WeatherDashboard/) or clone the repository locally and open the `index.html` file in your browser. Enter a city name in the search bar and click the search button. The current weather and 5-day forecast for the city will be displayed. The city will also be added to the search history. Click on a city in the search history to view the weather for that city again. Click the clear button to clear the search history.
 
 ## Screenshots
-![Screenshot 2023-05-10 000439](https://github.com/cwchilvers/UCI-CBC-06-WeatherDashboard/assets/59628271/f342e69f-b7ae-4f5d-90f1-36f7e3497931)
+![Screenshot](https://github.com/cwchilvers/UCI-CBC-06-WeatherDashboard/assets/59628271/f342e69f-b7ae-4f5d-90f1-36f7e3497931)
 
-## Deployed Web App
-[Weather Dashboard](https://cwchilvers.github.io/UCI-CBC-06-WeatherDashboard/)
+## Technologies Used
+* HTML
+* CSS
+* JavaScript
+* jQuery
+* OpenWeather API
+
+## License
+This project is licensed under the MIT License. See the [MIT License](https://opensource.org/licenses/mit/) page for details.
+
+## Credits
+* [OpenWeather API](https://openweathermap.org/api)
+* [jQuery](https://jquery.com/)
+* [Google Fonts](https://fonts.google.com/)
+
+
+
+## Contact Information
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cwchilvers@gmail.com)
+[![Github](https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/cwchilvers)
