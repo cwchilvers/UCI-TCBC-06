@@ -31,8 +31,8 @@ To use this project, either access the web app [here](https://cwchilvers.github.
 ![Screenshot](https://github.com/cwchilvers/UCI-CBC-06-WeatherDashboard/assets/59628271/f342e69f-b7ae-4f5d-90f1-36f7e3497931)
 
 ## Technologies Used
-* HTML
 * CSS
+* HTML
 * JavaScript
 * jQuery
 * OpenWeather API
@@ -41,11 +41,9 @@ To use this project, either access the web app [here](https://cwchilvers.github.
 This project is licensed under the MIT License. See the [MIT License](https://opensource.org/licenses/mit/) page for details.
 
 ## Credits
-* [OpenWeather API](https://openweathermap.org/api)
-* [jQuery](https://jquery.com/)
 * [Google Fonts](https://fonts.google.com/)
-
-
+* [jQuery](https://jquery.com/)
+* [OpenWeather API](https://openweathermap.org/api)
 
 ## Contact Information
 [![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cwchilvers@gmail.com)
