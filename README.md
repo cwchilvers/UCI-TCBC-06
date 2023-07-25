@@ -46,5 +46,7 @@ This project is licensed under the MIT License. See the [MIT License](https://op
 * [OpenWeather API](https://openweathermap.org/api)
 
 ## Contact Information
-[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cwchilvers@gmail.com)
-[![Github](https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/cwchilvers)
+<p align="center">
+    <a href="mailto:cwchilvers@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Unity"></a>
+    <a href="https://github.com/cwchilvers"><img src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white"></a>
+</p>
