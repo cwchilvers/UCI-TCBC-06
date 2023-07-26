@@ -25,7 +25,7 @@
 The following is a weather dashboard which allows the user to search for a city and view the current weather and 5-day forecast. The user can also view their search history and click on a city to view the weather for that city again. The weather dashboard uses the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The app runs in the browser and features dynamically updated HTML and CSS powered by jQuery. The app also uses `localStorage` to store any persistent data.
 
 ## Usage
-To use this web app, either access the web app [here](https://cwchilvers.github.io/UCI-CBC-06-WeatherDashboard/) or clone the repository locally and open the `index.html` file in your browser. Enter a city name in the search bar and click the search button. The current weather and 5-day forecast for the city will be displayed. The city will also be added to the search history. Click on a city in the search history to view the weather for that city again. Click the clear button to clear the search history.
+To use this web application, either access the web app [here](https://example.com) or clone the repository locally and open the `index.html` file in your browser. Enter a city name in the search bar and click the search button. The current weather and 5-day forecast for the city will be displayed. The city will also be added to the search history. Click on a city in the search history to view the weather for that city again. Click the clear button to clear the search history.
 
 ## Screenshots
 ![Screenshot](https://github.com/cwchilvers/UCI-CBC-06-WeatherDashboard/assets/59628271/f342e69f-b7ae-4f5d-90f1-36f7e3497931)
